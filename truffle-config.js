@@ -1,9 +1,8 @@
 require('babel-register');
 require('babel-polyfill');
+require('dotenv').config();
 
 const hdWalletProvider = require('truffle-hdwallet-provider');
-const infuraEndpoint = 'https://ropsten.infura.io/v3/f6a5cd01e59d41198b857cb44cb62e5f';
-const mnemonic = '';
 
 module.exports = {
   networks: {
@@ -13,9 +12,9 @@ module.exports = {
       network_id: "*" // Match any network id
     },
     ropsten: {
-      provider: () => hdWalletProvider(mnemonic, infuraEndpoint),
+      provider: () => new hdWalletProvider(process.env.MNEMONIC, `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`),
       network_id: 3,
-      gas: 4400000000,
+      gas: 44000000000,
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true
