@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/EDTx-block/static/media/xtreme-logo.59c38ff6.jpeg"
   },
   {
-    "revision": "29421fe6c968d3362723aff4eacd6afe",
+    "revision": "404e4eaa37e71f7910a70698b29612a7",
     "url": "/EDTx-block/index.html"
   }
 ];
