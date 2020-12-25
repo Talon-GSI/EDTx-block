@@ -82,7 +82,7 @@ require('chai')
                 await tokenFarm.issueToken({ from: investor }).should.be.rejected;
     
                 // unstake tokens
-                await tokenFarm.unstakeTokens({ from: investor})
+                await tokenFarm.unStakeTokens({ from: investor})
     
                 // check results after unstaking
                 result = await daiToken.balanceOf(investor)

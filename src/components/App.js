@@ -87,7 +87,7 @@ class App extends Component {
 
   unStakeTokens = () => {
     this.setState({ loading: true })
-    this.state.tokenFarm.methods.unstakeTokens().send({ from: this.state.account }).on('transactionHash', (hash) => {
+    this.state.tokenFarm.methods.unStakeTokens().send({ from: this.state.account }).on('transactionHash', (hash) => {
       this.setState({ loading: false })
     })
   }

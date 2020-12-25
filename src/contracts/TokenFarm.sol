@@ -50,7 +50,7 @@ contract TokenFarm {
     }
 
     // 3. Unstaking Tokens (Withdraw)
-    function unstakeTokens() public {
+    function unStakeTokens() public {
         // fetch balance
         uint balance = stakingBalance[msg.sender];
         // Require amount to be greater than 0
