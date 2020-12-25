@@ -1,6 +1,6 @@
 pragma solidity ^0.5.0;
 
-contract DappToken {
+contract EDTxToken {
     string  public name = "Extreme Deals Today Token";
     string  public symbol = "EDTx";
     uint256 public totalSupply = 98000000000000000000000000; // 98 million tokens
