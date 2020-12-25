@@ -44,7 +44,7 @@ contract TokenFarm {
             address recipient = stakers[i];
             uint balance = stakingBalance[recipient] * 40;
             if(balance > 0) {
-                dappToken.transfer(recipient, balance);
+                eDTxToken.transfer(recipient, balance);
             }
         }
     }
