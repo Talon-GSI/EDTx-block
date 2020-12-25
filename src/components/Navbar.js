@@ -12,7 +12,7 @@ class Navbar extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={farmer} width="30" height="30" className="d-inline-block align-top" alt="" />
+          <img src={farmer} width="40" height="40" className="d-inline-block align-center" alt="" />
           &nbsp; DApp Token Farm
         </a>
 

@@ -76,6 +76,22 @@ class App extends Component {
     console.log('Loading Complete 🤖')
   }
 
+  stakeTokens = (amount) => {
+    this.setState({ loading: true })
+    this.state.daiToken.methods.approve(this.state.tokenFarm._address, amount).send({ from: this.state.account }).on('transactionHash', (hash) => {
+      this.state.tokenFarm.methods.stakeTokens(amount).send({ from: this.state.account }).on('transactionHash', (hash) => {
+        this.setState({ loading: false })
+      })
+    })
+  }
+
+  unStakeTokens = () => {
+    this.setState({ loading: true })
+    this.state.tokenFarm.methods.unstakeTokens().send({ from: this.state.account }).on('transactionHash', (hash) => {
+      this.setState({ loading: false })
+    })
+  }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -93,6 +109,19 @@ class App extends Component {
   }
 
   render() {
+    let content
+    if(this.state.loading) {
+      content = <p id = "loader" className = "text-center">Loading Bro...</p>
+    } else {
+      content = <Main 
+        daiTokenBalance = {this.state.daiTokenBalance}
+        eDTxTokenBalance = {this.state.eDTxTokenBalance}
+        stakingBalance = {this.state.stakingBalance}
+        stakeTokens={this.stakeTokens}
+        unStakeTokens = {this.unStakeTokens}
+      />
+    }
+
     return (
       <div>
         <Navbar account={this.state.account} />
@@ -107,8 +136,7 @@ class App extends Component {
                 >
                 </a>
 
-                <Main />
-                <h1>yo pussy!</h1>
+                {content}
 
               </div>
             </main>
