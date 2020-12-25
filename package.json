@@ -1,8 +1,9 @@
 {
-  "name": "defi-tutorial",
+  "name": "Xtreme Deals Today Dapp",
   "version": "0.1.0",
   "description": "DeFi Token Staking App",
-  "author": "gregory@dappuniversity.com",
+  "author": "Talon@gsi.com",
+  "homepage": "https://talon-gsi.github.io/EDTx-block/",
   "dependencies": {
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
@@ -28,7 +29,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
